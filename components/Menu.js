@@ -3,7 +3,7 @@ import Link from "next/link"
 import { useState } from "react";
 import { BsList } from "react-icons/bs";
 
-export function Modal() {
+export function Menu() {
     const [showModal, setShowModal] = useState(false);
 
     return(

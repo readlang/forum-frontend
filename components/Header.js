@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Modal } from './Modal';
+import { Menu } from './Menu';
 import { SearchBar } from "./SearchBar";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { ProfileDropdown } from "./ProfileDropdown";
@@ -8,15 +8,13 @@ export function Header() {
     return(
         <nav>
             <ul>
-                <Modal/>
+                <Menu/>
             </ul>
             
             <ul>
-                <li><strong>
-                    <Link href="/"> 
-                            Forumative
-                    </Link>
-                </strong>  </li>
+                <Link href="/"><h5 style={{marginBottom: "0"}}>
+                    Forumative&nbsp;
+                </h5></Link>
             </ul>
             
             <ul>
