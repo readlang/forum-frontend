@@ -14,7 +14,7 @@ export function Menu() {
 
             {showModal ?
                 <dialog id="modal-example" open
-                style={{ justifyContent: "flex-start", alignItems: "stretch", left: "-20px"}} >
+                style={{ justifyContent: "flex-start", alignItems: "stretch", left: "-20px", backdropFilter: "none"}} >
                     <article style={{maxWidth: "400px", minWidth: "300px", paddingLeft: "50px"}}>
                         <a href="#close"
                         aria-label="Close"

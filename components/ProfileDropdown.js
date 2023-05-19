@@ -12,13 +12,13 @@ export function ProfileDropdown() {
         // logged in
         dropdownItems = [
             {text: "Profile", link: "/profile"},
-            {text: "Log out", link: "/profile"}
+            {text: "Log out", link: "/logout"}
         ]
     } else { 
         // not logged in
         dropdownItems = [
-            {text: "Log in", link: "/profile"},
-            {text: "Sign up", link: "/profile"}
+            {text: "Log in", link: "/login"},
+            {text: "Sign up", link: "/signup"}
         ]
     }
 
