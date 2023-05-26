@@ -9,7 +9,13 @@ export default function Page() {
 
     function onSubmit(event) {
         event.preventDefault()
-        console.log(username, email, password)
+        fetch(`${process.env.NEXT_PUBLIC_API}/user`, {
+            method: "post",
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({userName: username, email: email, password: password})
+        })
+        .then(resp => resp.json())
+        .then(data => console.log(data))
     }
 
     return (
