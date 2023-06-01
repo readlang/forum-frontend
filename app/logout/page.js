@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ContextStore } from "../../components/Context";
-import { logoutFetch } from '@/components/userFetches';
+import { logoutFetch } from '@/appLogic/userFetches';
 
 export default function Page() {
     const contextObj = useContext(ContextStore)

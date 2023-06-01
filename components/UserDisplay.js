@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useContext } from 'react';
 import { ContextStore } from "@/components/Context";
-import { authenticateFetch } from '@/components/userFetches';
+import { authenticateFetch } from '@/appLogic/userFetches';
 
 export default function UserDisplay() {
     const contextObj = useContext(ContextStore)

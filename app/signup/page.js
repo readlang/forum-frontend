@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
 import { ContextStore } from "../../components/Context";
-import { signupFetch } from '@/components/userFetches';
+import { signupFetch } from '@/appLogic/userFetches';
 
 export default function Page() {
     const contextObj = useContext(ContextStore)
