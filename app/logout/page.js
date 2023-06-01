@@ -1,12 +1,17 @@
 "use client"
 import Link from 'next/link';
-import { useEffect, useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { ContextStore } from "../../components/Context";
+import { logoutFetch } from '@/components/userFetches';
 
 export default function Page() {
     const router = useRouter()
-
+    const contextObj = useContext(ContextStore)
     console.log("Log out action here")
+
+    logoutFetch().then(data => contextObj.setUser(data.user))
+    .then(() => console.log(contextObj))
 
     useEffect(()=>{
         setTimeout(()=>{

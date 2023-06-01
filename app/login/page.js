@@ -1,14 +1,24 @@
 "use client"
 import Link from 'next/link';
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useRouter } from "next/navigation";
+import { ContextStore } from "../../components/Context";
+import { loginFetch } from '@/components/userFetches';
 
 export default function Page() {
+    const contextObj = useContext(ContextStore)
+    const router = useRouter()
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
     function onSubmit(event) {
         event.preventDefault()
-        console.log(username, password)
+        loginFetch(username, password).then(data => {
+            contextObj.setUser(data.user)
+            // contextObj.setToken(data.token) // this doesn't seem to be setting token
+        })
+        .then(() => console.log(contextObj))
+        // router.push('/')
     }
 
     return (

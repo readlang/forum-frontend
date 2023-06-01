@@ -5,12 +5,12 @@ export const ContextStore = createContext({})
 
 export default function Context({ children }) {
     const [valX, setValX] = useState(100)
-    const [valY, setValY] = useState(999)
+    const [token, setToken] = useState("")
     const [user, setUser] = useState({})
 
     const contextObj ={
         valX: valX, setValX: setValX,
-        valY: valY, setValY: setValY,
+        token: token, setToken: setToken,
         user: user, setUser: setUser,
     }
     

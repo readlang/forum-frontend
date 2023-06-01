@@ -8,19 +8,26 @@ export function ProfileDropdown() {
     const contextObj = useContext(ContextStore)
     
     let dropdownItems 
-    if (Object.keys(contextObj.user).length) { 
-        // logged in
-        dropdownItems = [
-            {text: "Profile", link: "/profile"},
-            {text: "Log out", link: "/logout"}
-        ]
-    } else { 
-        // not logged in
-        dropdownItems = [
-            {text: "Log in", link: "/login"},
-            {text: "Sign up", link: "/signup"}
-        ]
-    }
+    // if (Object.keys(contextObj.user).length) { 
+    //     // logged in
+    //     dropdownItems = [
+    //         {text: "Profile", link: "/profile"},
+    //         {text: "Log out", link: "/logout"}
+    //     ]
+    // } else { 
+    //     // not logged in
+    //     dropdownItems = [
+    //         {text: "Log in", link: "/login"},
+    //         {text: "Sign up", link: "/signup"}
+    //     ]
+    // }
+
+    dropdownItems = [
+        {text: "Log in", link: "/login"},
+        {text: "Sign up", link: "/signup"},
+        {text: "Profile", link: "/profile"},
+        {text: "Log out", link: "/logout"},
+    ]
 
     return(
         <details role="list" dir="rtl">

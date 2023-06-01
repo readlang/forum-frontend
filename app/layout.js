@@ -1,5 +1,6 @@
 import Context from "../components/Context"
 import { Header } from "../components/Header"
+import UserDisplay from '@/components/UserDisplay';
 
 export const metadata = {
   title: 'Forumative',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <Context>
           <Header/> 
           <hr/>
+          <UserDisplay/>
           <main>{children}</main>
           <section/>
           <hr/>

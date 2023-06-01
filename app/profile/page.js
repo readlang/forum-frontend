@@ -1,15 +1,21 @@
 "use client"
-import { useState } from "react";
+import Link from 'next/link';
+import { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
+import { ContextStore } from "../../components/Context";
+import { updatePassword } from '@/components/userFetches';
 
 export default function Page() {
     const router = useRouter()
+    const contextObj = useContext(ContextStore)
     const [oldPassword, setOldPassword] = useState("")
     const [newPassword, setNewPassword] = useState("")
 
     function onSubmit(event) {
         event.preventDefault()
-        console.log(newPassword)
+        updatePassword(oldPassword, newPassword).then(data => contextObj.setUser(data.user))
+        .then(() => console.log(contextObj))
+        //router.push('/')
     }
 
     return (

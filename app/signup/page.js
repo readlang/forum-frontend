@@ -1,21 +1,22 @@
 "use client"
 import Link from 'next/link';
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useRouter } from "next/navigation";
+import { ContextStore } from "../../components/Context";
+import { signupFetch } from '@/components/userFetches';
 
 export default function Page() {
+    const contextObj = useContext(ContextStore)
+    const router = useRouter()
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     function onSubmit(event) {
         event.preventDefault()
-        fetch(`${process.env.NEXT_PUBLIC_API}/user`, {
-            method: "post",
-            headers: {'content-type': 'application/json'},
-            body: JSON.stringify({userName: username, email: email, password: password})
-        })
-        .then(resp => resp.json())
-        .then(data => console.log(data))
+        signupFetch(username, email, password).then(data => contextObj.setUser(data.user) )
+        .then(() => console.log(contextObj))
+        // router.push('/')
     }
 
     return (
