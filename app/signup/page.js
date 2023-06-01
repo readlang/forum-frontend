@@ -14,9 +14,9 @@ export default function Page() {
 
     function onSubmit(event) {
         event.preventDefault()
-        signupFetch(username, email, password).then(data => contextObj.setUser(data.user) )
-        .then(() => console.log(contextObj))
-        // router.push('/')
+        signupFetch(username, email, password)
+        .then(data => contextObj.setUser(data.user) )
+        .then(() => router.push('/')) 
     }
 
     return (

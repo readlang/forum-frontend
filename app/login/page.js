@@ -13,12 +13,9 @@ export default function Page() {
 
     function onSubmit(event) {
         event.preventDefault()
-        loginFetch(username, password).then(data => {
-            contextObj.setUser(data.user)
-            // contextObj.setToken(data.token) // this doesn't seem to be setting token
-        })
-        .then(() => console.log(contextObj))
-        // router.push('/')
+        loginFetch(username, password)
+        .then(data => contextObj.setUser(data.user))
+        .then(() => router.push('/')) 
     }
 
     return (

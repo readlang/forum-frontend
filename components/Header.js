@@ -3,6 +3,7 @@ import { Menu } from './Menu';
 import { SearchBar } from "./SearchBar";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { ProfileDropdown } from "./ProfileDropdown";
+import UserDisplay from './UserDisplay';
 
 export function Header() {
     return(
@@ -17,11 +18,14 @@ export function Header() {
                 </h5></Link>
             </ul>
             
-            <ul>
-                <SearchBar/>
-                <li><ThemeSwitcher/> </li>
-                <li><ProfileDropdown/> </li>
-            </ul>
+            <div style={{paddingTop: "10px"}}>
+                <ul>
+                    <SearchBar/>
+                    <li><ThemeSwitcher/></li>
+                    <li><ProfileDropdown/></li>
+                </ul>
+                <UserDisplay/>
+            </div>
         </nav>
     )
 }

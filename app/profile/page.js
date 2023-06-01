@@ -6,16 +6,16 @@ import { ContextStore } from "../../components/Context";
 import { updatePassword } from '@/components/userFetches';
 
 export default function Page() {
-    const router = useRouter()
     const contextObj = useContext(ContextStore)
+    const router = useRouter()
     const [oldPassword, setOldPassword] = useState("")
     const [newPassword, setNewPassword] = useState("")
 
     function onSubmit(event) {
         event.preventDefault()
-        updatePassword(oldPassword, newPassword).then(data => contextObj.setUser(data.user))
-        .then(() => console.log(contextObj))
-        //router.push('/')
+        updatePassword(oldPassword, newPassword)
+        .then(data => contextObj.setUser(data.user))
+        .then(() => router.push('/')) 
     }
 
     return (

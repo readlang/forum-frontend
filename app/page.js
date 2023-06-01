@@ -1,13 +1,6 @@
-"use client"
 import Link from 'next/link';
-import { useEffect } from 'react';
-import { authenticateFetch } from '@/components/userFetches';
-import { ContextStore } from "@/components/Context";
-import { useContext } from "react";
 
 export default function Home() {
-    const contextObj = useContext(ContextStore)
-    useEffect(() => { authenticateFetch().then(data => contextObj.setUser(data.user) )}, [])
 
     return (
         <div>
