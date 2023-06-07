@@ -1,12 +1,10 @@
 "use client"
 import Link from "next/link"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BsList } from "react-icons/bs";
 
 export function Menu() {
     const [showSideMenu, setShowSideMenu] = useState(false)
-
-    useEffect(()=>{console.log(showSideMenu)})
 
     return(
         <div className="drawer w-14">
