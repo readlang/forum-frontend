@@ -15,7 +15,6 @@ export function Header() {
                     Forumative&nbsp;
                 </Link>
                 
-                    
                 <div className='flex items-center gap-2'>
                     <SearchBar/> 
                     <ThemeSwitcher/> 
@@ -23,7 +22,7 @@ export function Header() {
                 </div>
                     
             </div>
-            <div className="flex justify-end mb-4"> <UserDisplay/> </div>
+            <div className="flex justify-end mb-1"> <UserDisplay/> </div>
             <hr/>
         </nav>
     )
