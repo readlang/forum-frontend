@@ -15,33 +15,32 @@ export default function Home() {
 
     return (
         <div>
-            <h1>Sites</h1>
+            <h1 className='text-2xl font-bold'>Sites</h1>
             <br/>
             <div>
                 This project is very much in development.  
                 Most of the effort so far has been put into getting the Specs section working.
             </div>
-
-            <div className="grid">
+            <br/>
+            <div className="grid gap-3 lg:grid-cols-3">
 
                 {allSites.map(site => 
-                    <Link key={site.id} href="#">
-                        <article>
-                            <h6>{site.name}</h6>
-                            <hr/>
-                            <p>{site.description}</p>
-                        </article>
+                    <Link key={site.id} href="#" className='rounded-md border border-gray-300 bg-white shadow-md p-10'>
+                        
+                        <h6>{site.name}</h6>
+                        <hr/>
+                        <p>{site.description}</p>
                     </Link>
                 )}
 
-                <Link href="#">
+                <Link href="#" className='rounded-md border border-gray-300 bg-white shadow-md p-10'>
                     <article>
                         <h6>Title</h6>
                         <hr/>
                         <p>body text...</p>
                     </article>
                 </Link>
-                <Link href="#">
+                <Link href="#" className='rounded-md border border-gray-300 bg-white shadow-md p-10'>
                     <article>
                         <h6>Title</h6>
                         <hr/>

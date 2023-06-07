@@ -20,29 +20,28 @@ export default function Page() {
 
     return (
         <>
-            <h1>Profile</h1>
-            <article>
-                <h6>Welcome, Username</h6>
-                <p>username@gmail.com</p>
-                <hr/>
-                <form onSubmit={(event) => onSubmit(event)}>
-                    <p>Change password</p>
-                    <div className="grid">
-                        <input type="password" id="oldpassword" name="oldpassword" placeholder="Current password" required
-                            value={oldPassword} onChange={(e)=>setOldPassword(e.target.value)} 
-                        />
-                        <input type="password" id="newpassword" name="newpassword" placeholder="New password" required
-                            value={newPassword} onChange={(e)=>setNewPassword(e.target.value)}
-                        />
-                        <button type="submit"  style={{backgroundColor: '#ffc107', borderColor: '#ffc107', color: 'black'}}>Change password</button>
-                    </div>
-                </form > 
-                <hr/>
-                <br/>
-                <button className="outline" style={{color: 'red', borderColor: 'red', maxWidth: '120px'}}
-                    onClick={() => router.push('/logout')}
-                >Log out</button>
-            </article>
+            <br/>
+            <div className="text-xl font-bold mb-4">Profile</div>
+            <div >
+                <div className='text-lg'> {contextObj.user && contextObj.user.username ? 
+                    `Logged in as ${contextObj.user.username}` : 
+                    <Link href="/login" className="underline">Please log in</Link> }
+                </div>
+                <div className='text-md'> {contextObj.user && contextObj.user.email ? `Email: ${contextObj.user.email}` : " " }</div>
+                <hr className='mt-8 mb-8'/>
+                <div className="text-md font-bold mb-3">Change Password</div>
+
+                <form className="flex flex-col md:flex-row gap-3" onSubmit={(event) => onSubmit(event)}>
+                    <input type="password" placeholder="Current Password" className="input input-bordered w-full " value={oldPassword} onChange={(e)=>setOldPassword(e.target.value)} />
+
+                    <input type="password" placeholder="New Password" className="input input-bordered w-full " value={newPassword} onChange={(e)=>setNewPassword(e.target.value)} />
+
+                    <button className="btn btn-warning ">Change Password</button>
+                </form>
+                <hr className='mt-8 mb-8'/>
+                <div className="text-md font-bold mb-3">Log out of this device</div>
+                <button className='btn btn-outline btn-error w-40' onClick={() => router.push('/logout')}>Log out</button>
+            </div>
         </>
     );
 }

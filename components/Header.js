@@ -8,24 +8,23 @@ import UserDisplay from './UserDisplay';
 export function Header() {
     return(
         <nav>
-            <ul>
+            <div className="flex justify-between pt-5 items-center" >
                 <Menu/>
-            </ul>
-            
-            <ul>
-                <Link href="/"><h5 style={{marginBottom: "0"}}>
+                
+                <Link href="/" className='text-2xl font-bold'>
                     Forumative&nbsp;
-                </h5></Link>
-            </ul>
-            
-            <div style={{paddingTop: "10px"}}>
-                <ul>
-                    <SearchBar/>
-                    <li><ThemeSwitcher/></li>
-                    <li><ProfileDropdown/></li>
-                </ul>
-                <UserDisplay/>
+                </Link>
+                
+                    
+                <div className='flex items-center gap-2'>
+                    <SearchBar/> 
+                    <ThemeSwitcher/> 
+                    <ProfileDropdown/> 
+                </div>
+                    
             </div>
+            <div className="flex justify-end mb-4"> <UserDisplay/> </div>
+            <hr/>
         </nav>
     )
 }

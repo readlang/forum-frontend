@@ -21,31 +21,48 @@ export default function Page() {
 
     return (
         <>
-            <h1>Sign up</h1>
-            <article style={{maxWidth: "600px", marginLeft: "auto", marginRight: "auto"}}>
-                <form onSubmit={(event) => onSubmit(event)}>
-                    <label>
-                        Username
-                        <input type="text" id="username" name="username" placeholder="Username" required
-                        value={username} onChange={(e)=>setUsername(e.target.value)}
-                        />
-                    </label>
-                    <label>
-                        Email
-                        <input type="text" id="email" name="email" placeholder="Email" required
-                        value={email} onChange={(e)=>setEmail(e.target.value)}
-                        />
-                    </label>
-                    <label>
-                        New Password
-                        <input type="password" id="password" name="password" placeholder="New password" required
-                        value={password} onChange={(e)=>setPassword(e.target.value)}
-                        />
-                    </label>
-                    <button type="submit">Sign up</button>
-                </form > 
-                <small>Already signed up? <Link href="/login">Log in here</Link></small>
-            </article>
+            <br/>
+            <div className="flex flex-col lg:flex-row justify-center items-center">
+                <div className="text-left m-4">
+                    <h1 className="text-5xl font-bold">Welcome,</h1>
+                    <h1 className="text-5xl font-bold">please sign up</h1>
+                    <p className="py-6">Already have an account? <Link href="/login" className="underline">Log in here</Link> </p>
+                </div>
+                
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 m-4">
+                    <form className="card-body" onSubmit={(event) => onSubmit(event)}>
+                        
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Username</span>
+                            </label>
+                            <input type="text" placeholder="Username" className="input input-bordered"
+                            value={username} onChange={(e)=>setUsername(e.target.value)} />
+                        </div>
+
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="text" placeholder="Email" className="input input-bordered"
+                            value={email} onChange={(e)=>setEmail(e.target.value)} />
+                        </div>
+
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input type="password" placeholder="Password" className="input input-bordered"
+                            value={password} onChange={(e)=>setPassword(e.target.value)} />
+                        </div>
+
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
         </>
     );
 }

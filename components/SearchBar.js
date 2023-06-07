@@ -18,8 +18,9 @@ export function SearchBar() {
     },[searchText])
     
     return(
-        <input type="search" id="search" name="search" placeholder="search" 
-            style={{height: "1em", width: componentWidth, marginBottom: "0"}}
+        <input className="rounded-full border h-9 p-4"
+            type="search" id="search" name="search" placeholder="search" 
+            style={{width: componentWidth, marginBottom: "0"}}
             value={searchText} onChange={(e) => setSearchText(e.target.value)} 
         />
     )

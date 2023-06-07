@@ -8,12 +8,10 @@ export default function UserDisplay() {
     useEffect(() => { authenticateFetch().then(data => contextObj.setUser(data.user) )}, [])
 
     return (
-        <div style={{display: 'flex', marginTop: "-15px"}}>
-            <span style={{marginLeft: "auto", marginRight: "0", fontSize: "12px", fontWeight: "bolder" }}>
-                { contextObj.user && contextObj.user.username ? 
-                    `Welcome, ${contextObj.user.username}` : "Please sign in"
-                }
-            </span> 
-        </div>
+        <span className='text-xs font-bold' >
+            { contextObj.user && contextObj.user.username ? 
+                `Welcome, ${contextObj.user.username}` : "Please sign in"
+            }
+        </span> 
     )
 }

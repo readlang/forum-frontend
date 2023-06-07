@@ -20,25 +20,43 @@ export default function Page() {
 
     return (
         <>
-            <h1>Log in</h1>
-            <article style={{maxWidth: "600px", marginLeft: "auto", marginRight: "auto"}}>
-                <form onSubmit={(event) => onSubmit(event)}>
-                    <label>
-                        Username
-                        <input type="text" id="username" name="username" placeholder="Username" required
-                        value={username} onChange={(e)=>setUsername(e.target.value)}
-                        />
-                    </label>
-                    <label>
-                        Password
-                        <input type="password" id="password" name="password" placeholder="Password" required
-                        value={password} onChange={(e)=>setPassword(e.target.value)}
-                        />
-                    </label>
-                    <button type="submit">Log in</button>
-                </form >
-                <small>Need to sign up? <Link href="/signup">Create Account</Link></small>
-            </article>
+            <br/>
+            <div className="flex flex-col lg:flex-row justify-center items-center">
+                <div className="text-left m-4">
+                    <h1 className="text-5xl font-bold">Welcome back,</h1>
+                    <h1 className="text-5xl font-bold">please log in</h1>
+                    <p className="py-6">Need to sign up? <Link href="/signup" className="underline">Create Account</Link> </p>
+                </div>
+                
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 m-4">
+                    <form className="card-body" onSubmit={(event) => onSubmit(event)}>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Username</span>
+                            </label>
+                            <input type="text" placeholder="Username" className="input input-bordered"
+                            value={username} onChange={(e)=>setUsername(e.target.value)} />
+                        </div>
+
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input type="password" placeholder="Password" className="input input-bordered"
+                            value={password} onChange={(e)=>setPassword(e.target.value)} />
+                            <label className="label">
+                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                        </div>
+
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Log in</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
         </>
+        
     );
 }

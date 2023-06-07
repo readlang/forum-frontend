@@ -8,9 +8,9 @@ export function Menu() {
 
     return(
         <>
-            <li><a href="#" className="secondary" onClick={()=>setShowModal(true)} >
+            <a href="#" className="secondary" onClick={()=>setShowModal(true)} >
                 <BsList size="2em"/>
-            </a></li>
+            </a>
 
             {showModal ?
                 <dialog id="modal-example" open
