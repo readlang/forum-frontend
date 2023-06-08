@@ -34,14 +34,6 @@ export default function Home() {
                     </Link>
                 )}
 
-                <Link href="#" className='rounded-md border border-gray-300 bg-white shadow-md p-10'>
-                    <article>
-                        <h6>Title</h6>
-                        <hr/>
-                        <p>body text...</p>
-                    </article>
-                </Link>
-                
                 
             </div>
         </div>

@@ -44,7 +44,7 @@ export async function deleteSite() {
     return data
 }
 
-export async function getSitePosts() {
+export async function getSitePosts(siteId) {
     console.log("getSitePosts");
     const response = await fetch(`${process.env.NEXT_PUBLIC_API}/site/${siteId}/posts`, {
         method: 'get',
