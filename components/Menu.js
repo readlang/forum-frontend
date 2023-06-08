@@ -20,6 +20,8 @@ export function Menu() {
                     <br/><br/>
                     <li> <Link className="font-bold" href="/" onClick={()=>setShowSideMenu(false)}> Home </Link> </li>
                     <li> <Link className="font-bold" href="/profile" onClick={()=>setShowSideMenu(false)}> Profile </Link> </li>
+                    <hr className="my-2" />
+                    <li> <Link className="font-bold" href="/addsite" onClick={()=>setShowSideMenu(false)}> Add Site </Link> </li>
                 </ul>
             </div>
         </div>

@@ -9,11 +9,13 @@ export async function getSites() {
     return data
 }
 
-export async function postSite() {
-    console.log("GetSites");
+export async function postSite(name, desc, url) {
+    console.log("PostSites");
     const response = await fetch(`${process.env.NEXT_PUBLIC_API}/site`, {
         method: 'post',
-        credentials: "include"
+        credentials: "include",
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({name: name, description: desc, url: url}) 
     })
     const data = await response.json()
     console.log(data)
@@ -21,7 +23,7 @@ export async function postSite() {
 }
 
 export async function updateSite() {
-    console.log("GetSites");
+    console.log("updateSite");
     const response = await fetch(`${process.env.NEXT_PUBLIC_API}/site/${siteId}`, {
         method: 'put',
         credentials: "include"
@@ -32,7 +34,7 @@ export async function updateSite() {
 }
 
 export async function deleteSite() {
-    console.log("GetSites");
+    console.log("deleteSite");
     const response = await fetch(`${process.env.NEXT_PUBLIC_API}/site/${siteId}`, {
         method: 'delete',
         credentials: "include"
@@ -43,7 +45,7 @@ export async function deleteSite() {
 }
 
 export async function getSitePosts() {
-    console.log("GetSites");
+    console.log("getSitePosts");
     const response = await fetch(`${process.env.NEXT_PUBLIC_API}/site/${siteId}/posts`, {
         method: 'get',
         credentials: "include"

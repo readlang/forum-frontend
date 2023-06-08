@@ -30,6 +30,7 @@ export default function Home() {
                         <h6>{site.name}</h6>
                         <hr/>
                         <p>{site.description}</p>
+                        <p>{site.url}</p>
                     </Link>
                 )}
 
@@ -40,13 +41,7 @@ export default function Home() {
                         <p>body text...</p>
                     </article>
                 </Link>
-                <Link href="#" className='rounded-md border border-gray-300 bg-white shadow-md p-10'>
-                    <article>
-                        <h6>Title</h6>
-                        <hr/>
-                        <p>body text...</p>
-                    </article>
-                </Link>
+                
                 
             </div>
         </div>

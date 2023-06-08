@@ -7,7 +7,7 @@ import UserDisplay from './UserDisplay';
 
 export function Header() {
     return(
-        <nav>
+        <nav className="sticky top-0 bg-base-200 -mx-1">
             <div className="flex justify-between pt-5 items-center" >
                 <Menu/>
                 

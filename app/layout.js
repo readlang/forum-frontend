@@ -1,5 +1,6 @@
 import Context from "@/components/Context"
 import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer";
 import './globals.css';  // needed for tailwind
 
 export const metadata = {
@@ -10,18 +11,14 @@ export const metadata = {
 export default function RootLayout({ children }) { 
   
   return (
-    <html lang="en" data-theme="light">
-      <head>
-        
-      </head>
-      <body className="container mx-auto px-4 " >
+    <html lang="en" data-theme="light" className="bg-base-200">
+      <body className="container mx-auto px-4" >
         <Context>
-          <Header/> 
-          <main>{children}</main>
-          <section/>
-          <br/>
-          <hr/>
-          <footer>Created by Forumative, 2023</footer>
+          <div style={{minHeight: "calc(100vh - 65px)" }}>
+            <Header/> 
+            <main>{children}</main>
+          </div>
+          <Footer/>
         </Context>
       </body>
     </html>
